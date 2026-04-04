@@ -14,6 +14,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background: #020617;
@@ -25,7 +29,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 20px 10%;
-    background: rgba(2,6,23,0.8);
+    background: rgba(2,6,23,0.9);
     position: sticky;
     top: 0;
 }
@@ -38,35 +42,42 @@ nav a {
     margin-left: 20px;
     color: #cbd5f5;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 52px;
 }
 
 .hero p {
     margin-top: 10px;
     color: #94a3b8;
+    font-size: 18px;
 }
 
 .btn {
-    margin-top: 20px;
+    margin-top: 25px;
     display: inline-block;
-    padding: 10px 20px;
-    background: #38bdf8;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #38bdf8, #0ea5e9);
     color: black;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
 /* SECTIONS */
 section {
-    padding: 60px 10%;
+    padding: 70px 10%;
 }
 
 h2 {
@@ -74,28 +85,37 @@ h2 {
     color: #38bdf8;
 }
 
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
+/* CARD */
 .card {
     background: #0f172a;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 12px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     background: #1e293b;
+}
+
+/* PROJECT BUTTON */
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #38bdf8;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     background: #020617;
     color: #64748b;
 }
@@ -116,15 +136,16 @@ footer {
 
 <div class="hero">
     <h1>Ankit Mudgil</h1>
-    <p>Cybersecurity | SIEM | Azure | IT Support</p>
-    <a href="#contact" class="btn">Contact Me</a>
+    <p>Cybersecurity Analyst | SIEM | Azure | Threat Detection</p>
+    <a href="Ankit_Mudgil_CV.pdf" class="btn">Download CV</a>
 </div>
 
 <section id="about">
     <h2>About Me</h2>
     <p>
-        MSc Cybersecurity graduate with 3+ years of experience in IT Support and System Administration.
-        Experienced in Azure, Active Directory, and SIEM tools with strong focus on incident response and security operations.
+        Cybersecurity professional with hands-on experience in SIEM deployment, threat detection, and cloud security.
+        Built and tuned Wazuh SIEM in a real SME environment, reducing alert noise by 71% and improving detection accuracy.
+        Strong focus on SOC operations, incident response, and log analysis using modern security tools.
     </p>
 </section>
 
@@ -133,10 +154,10 @@ footer {
     <div class="grid">
         <div class="card">Azure & Microsoft 365</div>
         <div class="card">SIEM (Wazuh, Sentinel)</div>
-        <div class="card">Active Directory</div>
+        <div class="card">Active Directory & GPO</div>
         <div class="card">Networking & Firewalls</div>
         <div class="card">PowerShell & Python</div>
-        <div class="card">Endpoint Security</div>
+        <div class="card">Threat Detection & Analysis</div>
     </div>
 </section>
 
@@ -146,26 +167,34 @@ footer {
 
         <div class="card">
             <h3>SIEM Tuning & Threat Detection (Wazuh)</h3>
-            <p>Reduced alert noise by 71% and improved detection using SIEM tuning.</p>
-            <a href="https://github.com/Mudgil-A/SIEM-Tuning-Wazuh-SME">View Project</a>
+            <p>
+                Deployed Wazuh SIEM in a real SME network (67 endpoints). Reduced alert noise by 71% and improved detection by 183% using rule tuning and log analysis.
+            </p>
+            <a href="https://github.com/Mudgil-A/SIEM-Tuning-Wazuh-SME" target="_blank">View Project</a>
         </div>
 
         <div class="card">
             <h3>Phishing Detection (Machine Learning)</h3>
-            <p>Achieved 97% accuracy using Random Forest and SVM models.</p>
-            <a href="https://github.com/Mudgil-A/Phishing-Detection-ML">View Project</a>
+            <p>
+                Built ML models achieving 97% accuracy using Random Forest and SVM. Evaluated using ROC, PR curves and confusion matrix.
+            </p>
+            <a href="https://github.com/Mudgil-A/Phishing-Detection-ML" target="_blank">View Project</a>
         </div>
 
         <div class="card">
             <h3>AWS WordPress Security</h3>
-            <p>Secured cloud deployment with vulnerability mitigation techniques.</p>
-            <a href="https://github.com/Mudgil-A/AWS-WordPress-Security">View Project</a>
+            <p>
+                Secured cloud deployment using SSL, Fail2Ban, and vulnerability scanning tools like Nmap, WPScan, and Nikto.
+            </p>
+            <a href="https://github.com/Mudgil-A/AWS-WordPress-Security" target="_blank">View Project</a>
         </div>
 
         <div class="card">
             <h3>Malware Analysis (WannaCry)</h3>
-            <p>Analysed ransomware behaviour and identified attack mechanisms.</p>
-            <a href="https://github.com/Mudgil-A/Malware-Analysis-WannaCry">View Project</a>
+            <p>
+                Analysed WannaCry ransomware including SMB exploit (EternalBlue), encryption behaviour, and kill switch mechanism.
+            </p>
+            <a href="https://github.com/Mudgil-A/Malware-Analysis-WannaCry" target="_blank">View Project</a>
         </div>
 
     </div>
@@ -178,7 +207,7 @@ footer {
 </section>
 
 <footer>
-    <p>© 2026 Ankit Mudgil | Portfolio</p>
+    <p>© 2026 Ankit Mudgil | Cybersecurity Portfolio</p>
 </footer>
 
 </body>
