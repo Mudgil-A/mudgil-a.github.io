@@ -8,33 +8,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-
-html { scroll-behavior: smooth; }
-
 body {
-    font-family: 'Inter', sans-serif;
-    background: #020617;
-    color: #e2e8f0;
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:#020617;
+    color:#e2e8f0;
 }
 
-/* TOP BANNER */
-.banner {
-    text-align:center;
-    background:#38bdf8;
-    color:black;
-    padding:8px;
-    font-weight:bold;
+/* Glow background */
+body::before {
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:radial-gradient(circle at 20% 20%, #38bdf822, transparent),
+               radial-gradient(circle at 80% 80%, #0ea5e922, transparent);
+    z-index:-1;
 }
 
-/* NAV */
+/* Navbar */
 nav {
     display:flex;
     justify-content:space-between;
     padding:20px 10%;
-    background:rgba(2,6,23,0.9);
     position:sticky;
     top:0;
+    background:#020617cc;
+    backdrop-filter:blur(10px);
 }
 
 nav a {
@@ -45,42 +45,47 @@ nav a {
 
 nav a:hover { color:#38bdf8; }
 
-/* HERO */
+/* Hero */
 .hero {
     text-align:center;
     padding:120px 20px;
 }
 
-.hero h1 { font-size:52px; }
-
-.hero p {
-    margin-top:10px;
-    color:#94a3b8;
+.hero h1 {
+    font-size:52px;
 }
 
-/* BUTTON */
+.typing {
+    color:#38bdf8;
+}
+
+/* Button */
 .btn {
-    margin-top:20px;
-    display:inline-block;
     padding:12px 25px;
-    background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+    background:#38bdf8;
     color:black;
     border-radius:6px;
+    display:inline-block;
+    margin-top:20px;
 }
 
-/* SECTION */
-section { padding:70px 10%; }
+/* Section */
+section {
+    padding:70px 10%;
+}
 
-h2 { color:#38bdf8; margin-bottom:20px; }
+h2 {
+    color:#38bdf8;
+}
 
-/* GRID */
+/* Grid */
 .grid {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
 
-/* CARD */
+/* Card */
 .card {
     background:#0f172a;
     padding:25px;
@@ -89,20 +94,14 @@ h2 { color:#38bdf8; margin-bottom:20px; }
 }
 
 .card:hover {
-    transform:translateY(-6px);
-    background:#1e293b;
+    transform:translateY(-6px) scale(1.02);
+    box-shadow:0 0 20px #38bdf844;
 }
 
-.card a {
-    display:inline-block;
-    margin-top:10px;
-    color:#38bdf8;
-}
-
-/* FOOTER */
+/* Footer */
 footer {
     text-align:center;
-    padding:25px;
+    padding:20px;
     color:#64748b;
 }
 </style>
@@ -110,16 +109,11 @@ footer {
 
 <body>
 
-<div class="banner">
-🚀 Available for Cybersecurity / SOC Roles in Dublin — Immediate Start
-</div>
-
 <nav>
     <h2>Ankit</h2>
     <div>
         <a href="#about">About</a>
-        <a href="#why-me">Why Me</a>
-        <a href="#skills">Skills</a>
+        <a href="#why">Why Me</a>
         <a href="#projects">Projects</a>
         <a href="resume.html">Resume</a>
         <a href="#contact">Contact</a>
@@ -128,60 +122,22 @@ footer {
 
 <div class="hero">
     <h1>Ankit Mudgil</h1>
+    <p>I am a <span class="typing" id="typing"></span></p>
     <p>
-        Cybersecurity Analyst | SIEM | Azure | Threat Detection <br><br>
-        <strong>98% Customer Satisfaction</strong> • 
-        <strong>71% Alert Noise Reduction</strong> • 
+        <strong>98% Satisfaction</strong> • 
+        <strong>71% Noise Reduction</strong> • 
         <strong>97% ML Accuracy</strong>
     </p>
-    <a href="resume.html" class="btn">View Full Resume</a>
+    <a href="resume.html" class="btn">View Resume</a>
 </div>
 
-<section id="why-me">
+<section id="why">
 <h2>Why Hire Me?</h2>
 <div class="grid">
-
-<div class="card">
-<h3>📊 Proven Impact</h3>
-<p>Reduced SIEM alert noise by 71% and improved detection by 183%.</p>
-</div>
-
-<div class="card">
-<h3>🎯 Real Experience</h3>
-<p>3+ years managing enterprise IT systems and security operations.</p>
-</div>
-
-<div class="card">
-<h3>🧠 Advanced Skills</h3>
-<p>MSc Cybersecurity with SIEM, ML, malware, and cloud security experience.</p>
-</div>
-
-<div class="card">
-<h3>⚡ Ready to Work</h3>
-<p>Based in Dublin with full work authorisation — no sponsorship needed.</p>
-</div>
-
-</div>
-</section>
-
-<section id="about">
-<h2>About Me</h2>
-<p>
-Cybersecurity professional with hands-on experience in SIEM deployment, threat detection, and cloud security.
-Built and tuned Wazuh SIEM in a real SME environment, reducing alert noise by 71%.
-Focused on SOC operations, incident response, and log analysis.
-</p>
-</section>
-
-<section id="skills">
-<h2>Skills</h2>
-<div class="grid">
-<div class="card">Azure & Microsoft 365</div>
-<div class="card">SIEM (Wazuh, Sentinel)</div>
-<div class="card">Active Directory & GPO</div>
-<div class="card">Networking & Firewalls</div>
-<div class="card">PowerShell & Python</div>
-<div class="card">Threat Detection & Analysis</div>
+<div class="card">Reduced SIEM noise by 71%</div>
+<div class="card">3+ years real IT experience</div>
+<div class="card">MSc Cybersecurity</div>
+<div class="card">Immediate availability in Dublin</div>
 </div>
 </section>
 
@@ -190,50 +146,63 @@ Focused on SOC operations, incident response, and log analysis.
 <div class="grid">
 
 <div class="card">
-<h3>SIEM Tuning & Threat Detection</h3>
-<p>Reduced alert noise by 71% across 67 endpoints using Wazuh SIEM.</p>
-<a href="https://github.com/Mudgil-A/SIEM-Tuning-Wazuh-SME" target="_blank">View Project</a>
+<h3>SIEM (Wazuh)</h3>
+<p>Real SME deployment with 71% alert reduction.</p>
+<a href="https://github.com/Mudgil-A/SIEM-Tuning-Wazuh-SME">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Phishing Detection (ML)</h3>
-<p>Achieved 97% accuracy using Random Forest & SVM.</p>
-<a href="https://github.com/Mudgil-A/Phishing-Detection-ML" target="_blank">View Project</a>
+<h3>Phishing ML</h3>
+<p>97% accuracy using Random Forest & SVM.</p>
+<a href="https://github.com/Mudgil-A/Phishing-Detection-ML">GitHub</a>
 </div>
 
 <div class="card">
-<h3>AWS WordPress Security</h3>
-<p>Secured cloud deployment using Nmap, WPScan, and SSL hardening.</p>
-<a href="https://github.com/Mudgil-A/AWS-WordPress-Security" target="_blank">View Project</a>
+<h3>AWS Security</h3>
+<p>Hardened WordPress deployment.</p>
+<a href="https://github.com/Mudgil-A/AWS-WordPress-Security">GitHub</a>
 </div>
 
 <div class="card">
-<h3>Malware Analysis (WannaCry)</h3>
-<p>Analysed ransomware behaviour and SMB exploit techniques.</p>
-<a href="https://github.com/Mudgil-A/Malware-Analysis-WannaCry" target="_blank">View Project</a>
+<h3>Malware Analysis</h3>
+<p>WannaCry deep analysis.</p>
+<a href="https://github.com/Mudgil-A/Malware-Analysis-WannaCry">GitHub</a>
 </div>
 
 </div>
-</section>
-
-<section id="why-role">
-<h2>Why Dublin & Security Roles?</h2>
-<p>
-Based in Dublin and trained at National College of Ireland, I understand the cybersecurity job market.
-Focused on SOC Analyst and Cloud Security roles where I can contribute immediately.
-</p>
 </section>
 
 <section id="contact">
 <h2>Contact</h2>
 <p>Email: mudgilankit001@gmail.com</p>
-<p><a href="https://www.linkedin.com/in/mudgil-ankit" target="_blank">LinkedIn</a></p>
-<p><a href="resume.html">View Full Resume</a></p>
+<p><a href="https://linkedin.com/in/mudgil-ankit">LinkedIn</a></p>
 </section>
 
 <footer>
-<p>© 2026 Ankit Mudgil | Cybersecurity Portfolio</p>
+© 2026 Ankit Mudgil
 </footer>
+
+<script>
+const roles = ["SOC Analyst","Cybersecurity Engineer","Azure Specialist"];
+let i=0,j=0,word="",isDeleting=false;
+
+function type(){
+word=roles[i];
+j=isDeleting?j-1:j+1;
+document.getElementById("typing").innerText=word.substring(0,j);
+
+if(!isDeleting && j===word.length){
+isDeleting=true;
+setTimeout(type,1000);
+}
+else if(isDeleting && j===0){
+isDeleting=false;
+i=(i+1)%roles.length;
+}
+setTimeout(type,isDeleting?50:100);
+}
+type();
+</script>
 
 </body>
 </html>
